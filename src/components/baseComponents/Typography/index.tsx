@@ -1,7 +1,5 @@
 import { ReactNode, createElement } from "react";
 import classNames from "classnames";
-// styles
-import styles from "./styles.module.scss";
 
 // ----------------------------------------------------------------------
 type Props = {
@@ -73,17 +71,17 @@ const Typography = ({
     <TextTag
       className={classNames({
         // variant
-        [styles.heading1]: variant === "h1",
-        [styles.heading2]: variant === "h2",
-        [styles.heading3]: variant === "h3",
-        [styles.heading4]: variant === "h4",
-        [styles.body1]: variant === "body1",
-        [styles.body2]: variant === "body2",
-        [styles.button1]: variant === "button1",
-        [styles.button2]: variant === "button2",
-        [styles.caption1]: variant === "caption1",
-        [styles.caption2]: variant === "caption2",
-        [styles.normal]: variant === "normal",
+        ["heading1"]: variant === "h1",
+        ["heading2"]: variant === "h2",
+        ["heading3"]: variant === "h3",
+        ["heading4"]: variant === "h4",
+        ["body1"]: variant === "body1",
+        ["body2"]: variant === "body2",
+        ["button1"]: variant === "button1",
+        ["button2"]: variant === "button2",
+        ["caption1"]: variant === "caption1",
+        ["caption2"]: variant === "caption2",
+        ["normal"]: variant === "normal",
         // color
         ["text-primary"]: color === "primary",
         ["text-secondary"]: color === "secondary",
