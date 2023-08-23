@@ -1,13 +1,15 @@
 import React from "react";
 import classNames from "classnames";
+import InputAdornment from "../Adornment";
+import { InputAdornmentType } from "../Adornment/types";
 
 // ----------------------------------------------------------------------
 type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   inputClassName?: string;
   startAdornment?: React.ReactNode;
   endAdornment?: React.ReactNode;
-  startAdornmentType?: "inherit" | "fill";
-  endAdornmentType?: "inherit" | "fill";
+  startAdornmentType?: InputAdornmentType;
+  endAdornmentType?: InputAdornmentType;
 };
 
 const TextField = ({
@@ -23,22 +25,9 @@ const TextField = ({
   return (
     <div className={classNames("relative w-full", className)}>
       {startAdornment ? (
-        <div
-          className={classNames(
-            "absolute inset-y-0 flex items-center pointer-events-none left-0 pl-8",
-            {
-              ["bg-secondary px-8 rounded-5"]: startAdornmentType === "fill",
-            }
-          )}
-        >
-          <div
-            className={classNames("h-24 flex items-center justify-center", {
-              ["w-24"]: startAdornmentType !== "fill",
-            })}
-          >
-            {startAdornment}
-          </div>
-        </div>
+        <InputAdornment className="left-0 pl-8" type={startAdornmentType}>
+          {startAdornment}
+        </InputAdornment>
       ) : null}
 
       <input
@@ -56,15 +45,9 @@ const TextField = ({
       />
 
       {endAdornment ? (
-        <div className="absolute inset-y-0 flex items-center pointer-events-none right-0 pr-8">
-          <div
-            className={classNames("h-24 flex items-center justify-center", {
-              ["w-24"]: endAdornmentType !== "fill",
-            })}
-          >
-            {endAdornment}
-          </div>
-        </div>
+        <InputAdornment className="right-0 pr-8" type={endAdornmentType}>
+          {endAdornment}
+        </InputAdornment>
       ) : null}
     </div>
   );
