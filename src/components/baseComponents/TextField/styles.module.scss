@@ -1,0 +1,29 @@
+@import "../Typography/styles.module.scss";
+
+// ----------------------------------------------------------------------
+.input {
+  @apply body1 bg-netural rounded-5 h-40 text-primary p-16 outline-none w-full;
+
+  &::placeholder {
+    @apply caption1 tracking-normal;
+  }
+  &[type="password"] {
+    @apply font-bold tracking-2;
+  }
+}
+
+.adornment {
+  @apply absolute inset-y-0 flex items-center pointer-events-none;
+
+  & > div {
+    @apply h-24 flex items-center justify-center;
+  }
+}
+
+.startAdornment {
+  @apply adornment left-0 pl-8;
+}
+
+.endAdornment {
+  @apply adornment right-0 pr-8;
+}

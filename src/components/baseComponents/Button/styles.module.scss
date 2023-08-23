@@ -1,0 +1,10 @@
+.button {
+  @apply bg-button-primary text-white w-215 h-40 rounded-5 font-semibold leading-23 text-18 font-montserrat;
+
+  &:hover {
+    @apply bg-button-primary-hover;
+  }
+  &:disabled {
+    @apply bg-button-disabled;
+  }
+}
