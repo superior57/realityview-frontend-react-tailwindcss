@@ -1,11 +1,21 @@
-import {
-  createBrowserRouter,
-} from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { AUTH } from "../shared/config/constants"
+// Layouts
 import FullLayout from "@/components/layouts/FullLayout";
-import Dashboard from "./dashboard";
+import AuthLayout from "@/components/layouts/AuthLayout";
+import MainLayout from "@/components/layouts/MainLayout";
+// Protected Route
 import Protected from "@/shared/config/Protected";
+// Pages
+import Login from "./login";
+import Register from "./register";
 import NotFound from "./notFound";
+import Dashboard from "./dashboard";
+import Landing from "./landing";
+import Lead from "./lead";
+import LeadDetail from "./lead/LeadDetail";
+import Test from "./test";
+
 const user = {
   type: 'user'
 }
@@ -16,10 +26,50 @@ export const router = createBrowserRouter([
     element: <FullLayout />,
     children: [
       {
-        path: "dashboard",
-        element: <Protected auth={[AUTH.ADMIN, AUTH.USER, AUTH.VISITOR]} currentUser={user.type as AUTH}>
-          <Dashboard />
-        </Protected>,
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'test',
+        element: <Test />,
+      },
+    ],
+  },
+  {
+    path: "auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        index: true,
+        element: <Navigate to='/auth/login' replace />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'register',
+        element: <Register />
+      }
+    ]
+  },
+  {
+    path: "app",
+    element: <Protected auth={[AUTH.ADMIN, AUTH.USER, AUTH.VISITOR]} currentUser={user.type as AUTH}>
+      <MainLayout />
+      </Protected>,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: 'leads',
+        element: <Lead />,
+      },
+      {
+        path: 'leads/:id',
+        element: <LeadDetail />,
       },
     ],
   },
