@@ -6,6 +6,7 @@ const rem = (num) => ({ [num]: `${num / 16}rem` });
 const colors = {
   // Background
   netural: "#F1F5F9",
+  "netural-dark": "#ECEBED",
 
   // Button
   "button-primary": "#4C42D7",
