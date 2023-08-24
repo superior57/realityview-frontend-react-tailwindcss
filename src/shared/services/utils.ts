@@ -1,3 +1,10 @@
+
+/**
+ * Returns 3 string array items by search result, 2nd item is for quried data
+ * @param text
+ * @param query 
+ * @returns `[string, string, string]`
+ */
 export const splitTextByQuery = (
   text: string,
   query: string
