@@ -1,15 +1,15 @@
-import { Fragment, useState } from "react";
-import classNames from "classnames";
+import { Fragment, useState } from 'react';
+import classNames from 'classnames';
 // @headlessui
-import { Combobox, Transition } from "@headlessui/react";
+import { Combobox, Transition } from '@headlessui/react';
 // icon
-import Icon from "../IconWrapper";
+import Icon from '../IconWrapper';
 // components
-import TextField from "../TextField";
-import Typography from "../Typography";
-import Button from "../Button";
+import TextField from '../TextField';
+import Typography from '../Typography';
+import Button from '../Button';
 // utils
-import { splitTextByQuery } from "@/shared/services/utils";
+import { splitTextByQuery } from '@/shared/services/utils';
 
 // ----------------------------------------------------------------------
 type Props = {
@@ -32,16 +32,16 @@ const AutoComplete = ({
   onChange,
   onClear,
 }: Props) => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
 
   const filteredOptions =
-    query === ""
+    query === ''
       ? options
       : options.filter((option) =>
           option[filterKey]
             .toLowerCase()
-            .replace(/\s+/g, "")
-            .includes(query.toLowerCase().replace(/\s+/g, ""))
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, ''))
         );
 
   return (
@@ -75,10 +75,10 @@ const AutoComplete = ({
               leaveTo="opacity-0"
               enterFrom="opacity-0"
               enterTo="opacity-100"
-              afterLeave={() => setQuery("")}
+              afterLeave={() => setQuery('')}
             >
               <Combobox.Options className="absolute w-full py-8 overflow-auto transition-opacity max-h-60 rounded-b-5 border-1 border-netural-dark border-t-netural">
-                {filteredOptions.length === 0 && query !== "" ? (
+                {filteredOptions.length === 0 && query !== '' ? (
                   <Typography variant="body2" className="px-16">
                     Nothing found.
                   </Typography>
@@ -88,9 +88,9 @@ const AutoComplete = ({
                       key={option.id}
                       className={({ active }) =>
                         classNames(
-                          "relative flex cursor-default select-none py-8 px-16 pr-4 hover:bg-neutral-100",
+                          'relative flex cursor-default select-none py-8 px-16 pr-4 hover:bg-neutral-100',
                           {
-                            ["bg-netural"]: active,
+                            ['bg-netural']: active,
                           }
                         )
                       }

@@ -1,6 +1,6 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 // types
-import { IconList, IconType } from "./Icons";
+import { IconList, IconType } from './Icons';
 
 // ----------------------------------------------------------------------
 type Props = {
@@ -14,7 +14,7 @@ const Icon = ({ name, className }: Props) => {
   return (
     <div
       className={classNames(
-        "h-24 w-24 flex items-center justify-center",
+        'h-24 w-24 flex items-center justify-center',
         className
       )}
     >
