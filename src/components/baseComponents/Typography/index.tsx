@@ -16,12 +16,14 @@ type Props = {
     | "body2"
     | "normal";
   color?: "primary" | "secondary" | "black" | "white";
+  className?: string;
   children: ReactNode;
 };
 
 const Typography = ({
   variant = "body1",
   color = "primary",
+  className,
   children,
 }: Props) => {
   let tagName = "p";
@@ -40,10 +42,10 @@ const Typography = ({
       tagName = "h4";
       break;
     case "body1":
-      tagName = "p";
+      tagName = "span";
       break;
     case "body2":
-      tagName = "p";
+      tagName = "span";
       break;
     case "button1":
       tagName = "span";
@@ -52,10 +54,10 @@ const Typography = ({
       tagName = "span";
       break;
     case "caption1":
-      tagName = "p";
+      tagName = "span";
       break;
     case "caption2":
-      tagName = "p";
+      tagName = "span";
       break;
     case "normal":
       tagName = "p";
@@ -69,7 +71,7 @@ const Typography = ({
 
   return (
     <TextTag
-      className={classNames({
+      className={classNames(className, {
         // variant
         ["heading1"]: variant === "h1",
         ["heading2"]: variant === "h2",
