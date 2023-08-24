@@ -1,6 +1,6 @@
 import ReactSelect, { ActionMeta } from "react-select";
 import classNames from "classnames";
-import Icon from "../Icon";
+import Icon from "../IconWrapper";
 
 // ----------------------------------------------------------------------
 type Props = {

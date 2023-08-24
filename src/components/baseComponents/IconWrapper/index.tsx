@@ -1,11 +1,6 @@
 import classNames from "classnames";
 // types
-import { IconType } from "./types";
-// icons
-import IconArrowTopBottom from "./list/IconArrowTopBottom";
-import IconEye from "./list/IconEye";
-import IconMoney from "./list/IconMoney";
-import IconSearch from "./list/IconSearch";
+import { IconList, IconType } from "./Icons";
 
 // ----------------------------------------------------------------------
 type Props = {
@@ -14,12 +9,7 @@ type Props = {
 };
 
 const Icon = ({ name, className }: Props) => {
-  const iconList = {
-    "arrow-top-bottom": <IconArrowTopBottom />,
-    eye: <IconEye />,
-    money: <IconMoney />,
-    search: <IconSearch />,
-  };
+  const IconTag = IconList[name];
 
   return (
     <div
@@ -28,7 +18,7 @@ const Icon = ({ name, className }: Props) => {
         className
       )}
     >
-      {iconList[name]}
+      <IconTag />
     </div>
   );
 };
