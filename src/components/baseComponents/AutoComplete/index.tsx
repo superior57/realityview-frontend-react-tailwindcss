@@ -77,7 +77,7 @@ const AutoComplete = ({
               enterTo="opacity-100"
               afterLeave={() => setQuery('')}
             >
-              <Combobox.Options className="absolute w-full py-8 overflow-auto transition-opacity max-h-60 rounded-b-5 border-1 border-netural-dark border-t-netural">
+              <Combobox.Options className="absolute z-10 w-full py-8 overflow-auto transition-opacity bg-white max-h-60 rounded-b-5 border-1 border-netural-dark border-t-netural">
                 {filteredOptions.length === 0 && query !== '' ? (
                   <Typography variant="body2" className="px-16">
                     Nothing found.
