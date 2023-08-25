@@ -2,11 +2,12 @@ import { SyntheticEvent, useState } from 'react';
 import ReactDatePicker, {
   ReactDatePickerCustomHeaderProps,
 } from 'react-datepicker';
+import { format } from 'date-fns';
+import classNames from 'classnames';
+// components
 import TextField from '../TextField';
 import Button from '../Button';
 import Icon from '../IconWrapper';
-import { format } from 'date-fns';
-import classNames from 'classnames';
 
 // ----------------------------------------------------------------------
 type Props = {
