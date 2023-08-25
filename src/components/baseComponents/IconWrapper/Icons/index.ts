@@ -1,5 +1,10 @@
 // icons
+import IconArrowBackward from './list/IconArrowBackward';
+import IconArrowBackwardMultiple from './list/IconArrowBackwardMultiple';
+import IconArrowForward from './list/IconArrowForward';
+import IconArrowForwardMultiple from './list/IconArrowForwardMultiple';
 import IconArrowTopBottom from './list/IconArrowTopBottom';
+import IconCalendar from './list/IconCalendar';
 import IconClose from './list/IconClose';
 import IconCloseRoundFill from './list/IconCloseRoundFill';
 import IconEye from './list/IconEye';
@@ -13,13 +18,23 @@ export type IconType =
   | 'money'
   | 'search'
   | 'close'
-  | 'close-round-fill';
+  | 'close-round-fill'
+  | 'arrow-backward'
+  | 'arrow-backward-multiple'
+  | 'arrow-forward'
+  | 'arrow-forward-multiple'
+  | 'calendar';
 
 export const IconList = {
   'arrow-top-bottom': IconArrowTopBottom,
   'close-round-fill': IconCloseRoundFill,
+  'arrow-backward': IconArrowBackward,
+  'arrow-backward-multiple': IconArrowBackwardMultiple,
+  'arrow-forward': IconArrowForward,
+  'arrow-forward-multiple': IconArrowForwardMultiple,
   eye: IconEye,
   money: IconMoney,
   search: IconSearch,
   close: IconClose,
+  calendar: IconCalendar,
 };
