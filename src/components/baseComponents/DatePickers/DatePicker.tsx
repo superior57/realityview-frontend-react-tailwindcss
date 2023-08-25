@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import ReactDatePicker, {
   ReactDatePickerCustomHeaderProps,
 } from 'react-datepicker';
@@ -6,27 +6,44 @@ import TextField from '../TextField';
 import Button from '../Button';
 import Icon from '../IconWrapper';
 import { format } from 'date-fns';
+import classNames from 'classnames';
 
 // ----------------------------------------------------------------------
+type Props = {
+  className?: string;
+  value?: Date | null;
+  placeholder?: string;
+  format?: string;
+  onChange?: (
+    date: Date | null,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    event: SyntheticEvent<any, Event> | undefined
+  ) => void;
+};
 
-const DatePicker = () => {
-  const [value, setValue] = useState<Date | null>(new Date());
-  const refDatepicker = useRef<ReactDatePicker>(null);
+const DatePicker = ({
+  className,
+  value,
+  placeholder,
+  format = 'MM/dd/yyyy',
+  onChange,
+}: Props) => {
+  const [inValue, setInValue] = useState<Date | null>(null);
 
   return (
     <>
       <ReactDatePicker
-        wrapperClassName="w-full"
-        selected={value}
-        onChange={(date) => setValue(date)}
+        wrapperClassName={classNames('w-full', className)}
+        selected={value ?? inValue}
+        onChange={onChange ? onChange : (date) => setInValue(date)}
         customInput={<TextField endAdornment={<Icon name="calendar" />} />}
         showPopperArrow={false}
         todayButton="Today"
-        ref={refDatepicker}
         renderCustomHeader={CustomDatePickerHeader}
         formatWeekDay={(day) => day.substring(0, 3)}
-      >
-      </ReactDatePicker>
+        placeholderText={placeholder ?? format.toLowerCase()}
+        dateFormat={format}
+      ></ReactDatePicker>
     </>
   );
 };
