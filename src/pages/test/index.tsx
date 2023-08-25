@@ -27,7 +27,7 @@ const Test = () => {
       <Typography variant="h1">Test components</Typography>
 
       <div className="grid grid-cols-12 gap-8 px-16 pt-30 md:px-30">
-        <div className="flex flex-col col-span-2 gap-8">
+        <div className="flex flex-col gap-8 col-span-full sm:col-span-3 lg:col-span-2">
           <Typography variant="h2" className="mb-30">
             Typograpy
           </Typography>
@@ -40,7 +40,7 @@ const Test = () => {
           <Typography variant="h1">Heading 1</Typography>
         </div>
 
-        <div className="flex flex-col col-span-2 gap-8">
+        <div className="flex flex-col gap-8 col-span-full sm:col-span-3">
           <Typography variant="h2" className="mb-30">
             Button
           </Typography>
@@ -48,7 +48,7 @@ const Test = () => {
           <Button>Hello</Button>
         </div>
 
-        <div className="flex flex-col col-span-4 gap-8">
+        <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
           <Typography variant="h2" className="mb-30">
             Forms
           </Typography>
