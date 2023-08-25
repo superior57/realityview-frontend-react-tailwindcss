@@ -54,3 +54,59 @@
     @apply text-17 leading-22 font-normal;
   }
 }
+
+.react-datepicker {
+  @apply px-30 py-12 border-none shadow-md #{!important};
+
+  & * {
+    @apply font-roboto text-11 font-medium text-[#595a5c] #{!important};
+  }
+
+  & .react-datepicker__navigation {
+    @apply top-16;
+  }
+
+  & .react-datepicker__header {
+    @apply bg-transparent border-none;
+
+    & .current-date-label {
+      @apply text-button-primary font-bold text-12 leading-14 #{!important};
+    }
+    & .react-datepicker__day-names {
+      @apply flex mx-0 gap-12 border-t-1 border-[#C8CBCF] py-16;
+
+      & * {
+        @apply text-primary #{!important};
+      }
+    }
+  }
+
+  & .react-datepicker__month-container {
+    @apply mb-16;
+
+    & .react-datepicker__month {
+      @apply m-0 border-b-1 border-[#C8CBCF];
+
+      & .react-datepicker__week {
+        @apply flex mx-0 gap-12 mb-16;
+
+        & .react-datepicker__day--selected {
+          @apply bg-button-primary text-white #{!important};
+        }
+
+        & .react-datepicker__day--outside-month {
+          @apply text-[#B2B5B8] #{!important};
+        }
+
+        & .react-datepicker__day--keyboard-selected {
+          @apply border-1 border-button-primary bg-white text-button-primary hover:bg-button-primary hover:text-white #{!important};
+        }
+      }
+    }
+  }
+
+  & .react-datepicker__today-button {
+    @apply w-46 bg-[#F1F5F9] py-4 hover:bg-button-primary-hover rounded-5 text-[#B2B5B8] hover:text-white mx-auto mb-8 border-none;
+    @apply text-[#B2B5B8] hover:text-white #{!important};
+  }
+}
