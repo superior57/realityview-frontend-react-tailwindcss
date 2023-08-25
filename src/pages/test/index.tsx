@@ -36,8 +36,13 @@ const Test = () => {
           <Typography variant="h2">Heading 2</Typography>
           <Typography variant="h3">Heading 3</Typography>
           <Typography variant="h4">Heading 4</Typography>
-          <Typography variant="h1">Heading 1</Typography>
-          <Typography variant="h1">Heading 1</Typography>
+          <Typography variant="body1">Body 1</Typography>
+          <Typography variant="body2">Body 2</Typography>
+          <Typography variant="button1">Button 1</Typography>
+          <Typography variant="button2">Button 2</Typography>
+          <Typography variant="caption1">Caption 1</Typography>
+          <Typography variant="caption2">Caption 2</Typography>
+          <Typography variant="normal">Normal text</Typography>
         </div>
 
         <div className="flex flex-col gap-8 col-span-full sm:col-span-3">
@@ -45,7 +50,7 @@ const Test = () => {
             Button
           </Typography>
 
-          <Button>Hello</Button>
+          <Button>Primary button</Button>
         </div>
 
         <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
