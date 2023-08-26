@@ -6,6 +6,7 @@ const rem = (num) => ({ [num]: `${num / 16}rem` });
 const colors = {
   // Background
   netural: '#F1F5F9',
+  'netural-light': '#EBEBEB',
   'netural-dark': '#ECEBED',
 
   // Button
@@ -16,12 +17,21 @@ const colors = {
 
   // Text
   primary: '#191E3B',
+  'primary-dark': '#182952',
   secondary: '#8E9CB2',
+  'secondary-dark': '#D9D9D9',
+
+  //
+  blur: '#0069FF',
+  success: '#B5E2C4',
+  error: '#C84156',
+  warning: '#CCD01C',
 };
 
 const typography = {
   fontSize: {
     ...rem(6),
+    ...rem(10),
     ...rem(11),
     ...rem(12),
     ...rem(13),
@@ -60,8 +70,10 @@ const spacing = {
   ...rem(14),
   ...rem(15),
   ...rem(16),
+  ...rem(18),
   ...rem(20),
   ...rem(21),
+  ...rem(22),
   ...rem(24),
   ...rem(30),
   ...rem(38),
@@ -71,7 +83,11 @@ const spacing = {
 };
 
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/flowbite/**/*.js',
+  ],
   theme: {
     ...typography,
     fontFamily: {
@@ -91,7 +107,10 @@ module.exports = {
       borderWidth: {
         ...rem(1),
       },
+      backgroundImage: {
+        'checkbox-inherit': `url(assets/icon/checkbox-inherit.svg)`,
+      },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
