@@ -7,7 +7,7 @@ import Icon from '../IconWrapper';
 // components
 import TextField from '../TextField';
 import Typography from '../Typography';
-import Button from '../Button';
+import { Button } from '../Button';
 // utils
 import { splitTextByQuery } from '@/shared/services/utils';
 
