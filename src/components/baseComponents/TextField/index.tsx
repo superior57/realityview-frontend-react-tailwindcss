@@ -1,18 +1,23 @@
-import React from 'react';
+import {
+  ForwardedRef,
+  InputHTMLAttributes,
+  ReactNode,
+  forwardRef,
+} from 'react';
 import classNames from 'classnames';
 import InputAdornment from '../Adornment';
 import { InputAdornmentType } from '../Adornment';
 
 // ----------------------------------------------------------------------
-type Props = React.InputHTMLAttributes<HTMLInputElement> & {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   inputClassName?: string;
-  startAdornment?: React.ReactNode;
-  endAdornment?: React.ReactNode;
+  startAdornment?: ReactNode;
+  endAdornment?: ReactNode;
   startAdornmentType?: InputAdornmentType;
   endAdornmentType?: InputAdornmentType;
 };
 
-const TextField = React.forwardRef(
+const TextField = forwardRef(
   (
     {
       className,
@@ -23,7 +28,7 @@ const TextField = React.forwardRef(
       endAdornmentType,
       ...other
     }: Props,
-    ref: React.ForwardedRef<HTMLInputElement>
+    ref: ForwardedRef<HTMLInputElement>
   ) => {
     return (
       <div className={classNames('relative w-full', className)}>

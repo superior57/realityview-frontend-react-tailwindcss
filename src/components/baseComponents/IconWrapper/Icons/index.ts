@@ -1,4 +1,5 @@
 // icons
+import IconAlert from './list/IconAlert';
 import IconArrowBackward from './list/IconArrowBackward';
 import IconArrowBackwardMultiple from './list/IconArrowBackwardMultiple';
 import IconArrowForward from './list/IconArrowForward';
@@ -23,7 +24,8 @@ export type IconType =
   | 'arrow-backward-multiple'
   | 'arrow-forward'
   | 'arrow-forward-multiple'
-  | 'calendar';
+  | 'calendar'
+  | 'alert';
 
 export const IconList = {
   'arrow-top-bottom': IconArrowTopBottom,
@@ -37,4 +39,5 @@ export const IconList = {
   search: IconSearch,
   close: IconClose,
   calendar: IconCalendar,
+  alert: IconAlert,
 };

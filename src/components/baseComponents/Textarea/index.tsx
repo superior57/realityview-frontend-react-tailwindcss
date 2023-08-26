@@ -1,7 +1,7 @@
 import { TextareaHTMLAttributes, useState } from 'react';
 import classNames from 'classnames';
 // components
-import Button from '../Button';
+import { Button } from '../Button';
 import Icon from '../IconWrapper';
 import InputAdornment from '../Adornment';
 
