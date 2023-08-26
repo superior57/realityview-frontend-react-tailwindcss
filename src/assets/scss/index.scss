@@ -6,6 +6,10 @@
   html,
   body {
     @apply font-montserrat font-normal;
+
+    & * {
+      @apply ring-0 ring-transparent #{!important};
+    }
   }
 }
 
