@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import AutoComplete from '@/components/baseComponents/AutoComplete';
-import Button from '@/components/baseComponents/Button';
+import { Button, Notification } from '@/components/baseComponents/Button';
 import Icon from '@/components/baseComponents/IconWrapper';
 import Select from '@/components/baseComponents/Select';
 import TextField from '@/components/baseComponents/TextField';
 import Typography from '@/components/baseComponents/Typography';
 import { DatePicker } from '@/components/baseComponents/DatePickers';
 import Textarea from '@/components/baseComponents/Textarea';
+import Checkbox from '@/components/baseComponents/Checkbox';
+import Label from '@/components/baseComponents/Label';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +28,7 @@ const Test = () => {
     <div>
       <Typography variant="h1">Test components</Typography>
 
-      <div className="grid grid-cols-12 gap-8 px-16 pt-30 md:px-30">
+      <div className="grid grid-cols-12 gap-8 px-16 my-46 md:px-30">
         <div className="flex flex-col gap-8 col-span-full sm:col-span-3 lg:col-span-2">
           <Typography variant="h2" className="mb-30">
             Typograpy
@@ -93,6 +95,74 @@ const Test = () => {
           <Textarea placeholder="Description" rows={5} />
 
           <DatePicker />
+        </div>
+
+        <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
+          <Typography variant="h2" className="mb-30">
+            Checkbox and Notifications
+          </Typography>
+
+          <div className="flex items-start">
+            <Checkbox defaultChecked className="mr-16" />
+            <Checkbox className="mr-40" />
+
+            <Checkbox variant="inherit" className="mr-16" inputSize="small" />
+            <Checkbox
+              variant="inherit"
+              className="mr-40"
+              defaultChecked
+              inputSize="small"
+            />
+
+            <Notification className="mr-16" />
+            <Notification label={10} />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 col-span-full lg:col-span-3">
+          <Typography variant="h2" className="mb-30">
+            Progress
+          </Typography>
+
+          <div>
+            <Label
+              className="mr-16"
+              color="success"
+              title="ON TRACK"
+              size="small"
+            />
+            <Label
+              className="mr-16"
+              color="warnning"
+              title="IN DANGER"
+              size="small"
+            />
+            <Label
+              className="mr-16"
+              color="danger"
+              title="OFF TRACK"
+              size="small"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-8 col-span-full lg:col-span-3">
+          <Typography variant="h2" className="mb-30">
+            Status
+          </Typography>
+
+          <div>
+            <Label
+              className="mr-16"
+              color="success"
+              title="Active"
+            />
+            <Label
+              className="mr-16"
+              color="danger"
+              title="Inactive"
+            />
+          </div>
         </div>
       </div>
     </div>
