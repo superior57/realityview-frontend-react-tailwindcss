@@ -26,10 +26,10 @@ const Textarea = ({
       <textarea
         id="message"
         className={classNames(
-          'w-full p-16 border-transparent outline-none body1 bg-netural rounded-5 text-primary placeholder:caption1 placeholder:tracking-normal border-1 focus:border-netural-dark',
+          'w-full p-4 border-transparent outline-none body1 bg-netural rounded-5 text-primary placeholder:caption1 placeholder:tracking-normal border-1 focus:border-netural-dark',
           textareaClassName,
           {
-            ['pr-40']: value ? !!value : !!inValue,
+            ['pr-10']: value ? !!value : !!inValue,
           }
         )}
         value={value ?? inValue}
@@ -38,8 +38,9 @@ const Textarea = ({
       />
 
       {value ?? inValue ? (
-        <InputAdornment className="right-0 pr-8 -mt-8">
+        <InputAdornment className="right-0 pr-2 -mt-2">
           <Button
+            variant="icon"
             color="inherit"
             onClick={onClear ? onClear : () => setInValue('')}
           >

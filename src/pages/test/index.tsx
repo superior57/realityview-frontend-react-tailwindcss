@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import AutoComplete from '@/components/baseComponents/AutoComplete';
 import { Button, Notification } from '@/components/baseComponents/Button';
 import Icon from '@/components/baseComponents/IconWrapper';
 import Select from '@/components/baseComponents/Select';
@@ -9,6 +7,7 @@ import { DatePicker } from '@/components/baseComponents/DatePickers';
 import Textarea from '@/components/baseComponents/Textarea';
 import Checkbox from '@/components/baseComponents/Checkbox';
 import Label from '@/components/baseComponents/Label';
+import SearchField from '@/components/mainComponents/SearchField';
 
 // ----------------------------------------------------------------------
 
@@ -21,42 +20,42 @@ const Test = () => {
     { id: 5, name: 'Tanya Fox' },
     { id: 6, name: 'Hellen Schmidt' },
   ];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [data, setData] = useState<any>(null);
 
   return (
     <div>
       <Typography variant="h1">Test components</Typography>
 
-      <div className="grid grid-cols-12 gap-8 px-16 my-46 md:px-30">
-        <div className="flex flex-col gap-8 col-span-full sm:col-span-3 lg:col-span-2">
-          <Typography variant="h2" className="mb-30">
+      <div className="grid grid-cols-12 gap-2 px-4 my-11 md:px-7">
+        <div className="flex flex-col gap-2 col-span-full sm:col-span-3 lg:col-span-2">
+          <Typography variant="h2" className="mb-7">
             Typograpy
           </Typography>
 
-          <Typography variant="h1">Heading 1</Typography>
-          <Typography variant="h2">Heading 2</Typography>
-          <Typography variant="h3">Heading 3</Typography>
-          <Typography variant="h4">Heading 4</Typography>
-          <Typography variant="body1">Body 1</Typography>
-          <Typography variant="body2">Body 2</Typography>
-          <Typography variant="button1">Button 1</Typography>
-          <Typography variant="button2">Button 2</Typography>
-          <Typography variant="caption1">Caption 1</Typography>
-          <Typography variant="caption2">Caption 2</Typography>
-          <Typography variant="normal">Normal text</Typography>
+          <div className="flex flex-col gap-4">
+            <Typography variant="h1">Heading 1</Typography>
+            <Typography variant="h2">Heading 2</Typography>
+            <Typography variant="h3">Heading 3</Typography>
+            <Typography variant="h4">Heading 4</Typography>
+            <Typography variant="body1">Body 1</Typography>
+            <Typography variant="body2">Body 2</Typography>
+            <Typography variant="button1">Button 1</Typography>
+            <Typography variant="button2">Button 2</Typography>
+            <Typography variant="caption1">Caption 1</Typography>
+            <Typography variant="caption2">Caption 2</Typography>
+            <Typography variant="normal">Normal text</Typography>
+          </div>
         </div>
 
-        <div className="flex flex-col gap-8 col-span-full sm:col-span-3">
-          <Typography variant="h2" className="mb-30">
+        <div className="flex flex-col gap-2 col-span-full sm:col-span-3">
+          <Typography variant="h2" className="mb-7">
             Button
           </Typography>
 
-          <Button>Primary button</Button>
+          <Button className="px-30">Primary button</Button>
         </div>
 
         <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
-          <Typography variant="h2" className="mb-30">
+          <Typography variant="h2" className="mb-7">
             Forms
           </Typography>
 
@@ -83,62 +82,55 @@ const Test = () => {
             isMulti
           />
 
-          <AutoComplete
-            options={people}
-            value={data}
-            onChange={(value) => setData(value)}
-            filterKey="name"
-            placeholder="Search..."
-            onClear={() => setData(null)}
-          />
-
           <Textarea placeholder="Description" rows={5} />
 
           <DatePicker />
+
+          <SearchField options={people} filterKey="name" />
         </div>
 
-        <div className="flex flex-col gap-8 col-span-full lg:col-span-4">
-          <Typography variant="h2" className="mb-30">
+        <div className="flex flex-col gap-2 col-span-full lg:col-span-4">
+          <Typography variant="h2" className="mb-7">
             Checkbox and Notifications
           </Typography>
 
           <div className="flex items-start">
-            <Checkbox defaultChecked className="mr-16" />
-            <Checkbox className="mr-40" />
+            <Checkbox defaultChecked className="mr-4" />
+            <Checkbox className="mr-10" />
 
-            <Checkbox variant="inherit" className="mr-16" inputSize="small" />
+            <Checkbox variant="inherit" className="mr-4" inputSize="small" />
             <Checkbox
               variant="inherit"
-              className="mr-40"
+              className="mr-10"
               defaultChecked
               inputSize="small"
             />
 
-            <Notification className="mr-16" />
+            <Notification className="mr-4" />
             <Notification label={10} />
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 col-span-full lg:col-span-3">
-          <Typography variant="h2" className="mb-30">
+        <div className="flex flex-col gap-2 col-span-full lg:col-span-3">
+          <Typography variant="h2" className="mb-7">
             Progress
           </Typography>
 
           <div>
             <Label
-              className="mr-16"
+              className="mr-4"
               color="success"
               title="ON TRACK"
               size="small"
             />
             <Label
-              className="mr-16"
+              className="mr-4"
               color="warnning"
               title="IN DANGER"
               size="small"
             />
             <Label
-              className="mr-16"
+              className="mr-4"
               color="danger"
               title="OFF TRACK"
               size="small"
@@ -146,22 +138,14 @@ const Test = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-8 col-span-full lg:col-span-3">
-          <Typography variant="h2" className="mb-30">
+        <div className="flex flex-col gap-2 col-span-full lg:col-span-3">
+          <Typography variant="h2" className="mb-7">
             Status
           </Typography>
 
           <div>
-            <Label
-              className="mr-16"
-              color="success"
-              title="Active"
-            />
-            <Label
-              className="mr-16"
-              color="danger"
-              title="Inactive"
-            />
+            <Label className="mr-4" color="success" title="Active" />
+            <Label className="mr-4" color="danger" title="Inactive" />
           </div>
         </div>
       </div>

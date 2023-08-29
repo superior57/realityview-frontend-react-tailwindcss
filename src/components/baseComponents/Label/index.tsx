@@ -26,9 +26,9 @@ const Label = ({
         ['text-success-dark']: color === 'success',
         ['text-warnning-dark']: color === 'warnning',
         ['text-error-dark']: color === 'danger',
-        ['px-6 py-3 font-normal text-11 leading-16 rounded-3']:
+        ['px-1.5 py-1 font-normal text-11 leading-16 rounded-3']:
           size === 'small',
-        ['px-16 py-8 font-medium text-20 leading-30 rounded-8']:
+        ['px-4 py-2 font-medium text-20 leading-30 rounded-8']:
           size === 'medium',
       })}
     >

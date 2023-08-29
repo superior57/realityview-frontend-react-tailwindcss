@@ -57,11 +57,11 @@ const CustomDatePickerHeader = ({
   increaseYear,
 }: ReactDatePickerCustomHeaderProps) => {
   return (
-    <div className="flex items-center gap-5 pb-8">
-      <Button color="inherit" className="w-24 h-24" onClick={decreaseYear}>
+    <div className="flex items-center gap-1 pb-2">
+      <Button variant="icon" color="inherit" className="w-6 h-6" onClick={decreaseYear}>
         <Icon name="arrow-backward-multiple" />
       </Button>
-      <Button color="inherit" className="w-24 h-24" onClick={decreaseMonth}>
+      <Button variant="icon" color="inherit" className="w-6 h-6" onClick={decreaseMonth}>
         <Icon name="arrow-backward" />
       </Button>
 
@@ -71,10 +71,10 @@ const CustomDatePickerHeader = ({
 
       <div className="flex-1" />
 
-      <Button color="inherit" className="w-24 h-24" onClick={increaseMonth}>
+      <Button variant="icon" color="inherit" className="w-6 h-6" onClick={increaseMonth}>
         <Icon name="arrow-forward" />
       </Button>
-      <Button color="inherit" className="w-24 h-24" onClick={increaseYear}>
+      <Button variant="icon" color="inherit" className="w-6 h-6" onClick={increaseYear}>
         <Icon name="arrow-forward-multiple" />
       </Button>
     </div>

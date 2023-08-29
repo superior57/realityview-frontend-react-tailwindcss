@@ -33,7 +33,7 @@ const TextField = forwardRef(
     return (
       <div className={classNames('relative w-full', className)}>
         {startAdornment ? (
-          <InputAdornment className="left-0 pl-8" type={startAdornmentType}>
+          <InputAdornment className="left-0 pl-2" type={startAdornmentType}>
             {startAdornment}
           </InputAdornment>
         ) : null}
@@ -42,10 +42,10 @@ const TextField = forwardRef(
           type="text"
           className={classNames(
             inputClassName,
-            'body1 bg-netural rounded-5 h-40 text-primary p-16 outline-none w-full placeholder:caption1 placeholder:tracking-normal border-1 border-transparent focus:border-netural-dark',
+            'body1 bg-netural rounded-5 h-10 text-primary p-4 outline-none w-full placeholder:caption1 placeholder:tracking-normal border-1 border-transparent focus:border-netural-dark',
             {
-              ['pl-40']: !!startAdornment,
-              ['pr-40']: !!endAdornment,
+              ['pl-10']: !!startAdornment,
+              ['pr-10']: !!endAdornment,
               ['font-bold tracking-2']: other.type === 'password',
             }
           )}
@@ -54,7 +54,7 @@ const TextField = forwardRef(
         />
 
         {endAdornment ? (
-          <InputAdornment className="right-0 pr-8" type={endAdornmentType}>
+          <InputAdornment className="right-0 pr-2" type={endAdornmentType}>
             {endAdornment}
           </InputAdornment>
         ) : null}

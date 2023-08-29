@@ -29,6 +29,8 @@ const colors = {
   'warnning-dark': '#CCD01C',
   error: '#C8415680',
   'error-dark': '#C84156',
+
+  divider: '#8E9CB24A',
 };
 
 const typography = {
@@ -62,33 +64,6 @@ const typography = {
   },
 };
 
-const spacing = {
-  px: '1px',
-  0: '0',
-  ...rem(1),
-  ...rem(2),
-  ...rem(3),
-  ...rem(4),
-  ...rem(5),
-  ...rem(6),
-  ...rem(8),
-  ...rem(10),
-  ...rem(12),
-  ...rem(14),
-  ...rem(15),
-  ...rem(16),
-  ...rem(18),
-  ...rem(20),
-  ...rem(21),
-  ...rem(22),
-  ...rem(24),
-  ...rem(30),
-  ...rem(38),
-  ...rem(40),
-  ...rem(46),
-  ...rem(215),
-};
-
 module.exports = {
   content: [
     './index.html',
@@ -106,7 +81,7 @@ module.exports = {
     },
     extend: {
       colors,
-      spacing,
+      // spacing,
       borderRadius: {
         ...rem(3),
         ...rem(5),

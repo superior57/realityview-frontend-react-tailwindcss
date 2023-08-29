@@ -9,8 +9,10 @@ import IconCalendar from './list/IconCalendar';
 import IconClose from './list/IconClose';
 import IconCloseRoundFill from './list/IconCloseRoundFill';
 import IconEye from './list/IconEye';
+import IconMenu from './list/IconMenu';
 import IconMoney from './list/IconMoney';
 import IconSearch from './list/IconSearch';
+import IconUser from './list/IconUser';
 
 // ----------------------------------------------------------------------
 export type IconType =
@@ -25,7 +27,9 @@ export type IconType =
   | 'arrow-forward'
   | 'arrow-forward-multiple'
   | 'calendar'
-  | 'alert';
+  | 'alert'
+  | 'menu'
+  | 'user';
 
 export const IconList = {
   'arrow-top-bottom': IconArrowTopBottom,
@@ -40,4 +44,6 @@ export const IconList = {
   close: IconClose,
   calendar: IconCalendar,
   alert: IconAlert,
+  menu: IconMenu,
+  user: IconUser,
 };

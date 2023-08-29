@@ -60,7 +60,7 @@ const AutoComplete = ({
               {...(open
                 ? {
                     endAdornment: (
-                      <Button color="inherit" onClick={onClear}>
+                      <Button variant="icon" color="inherit" onClick={onClear}>
                         <Icon name="close" />
                       </Button>
                     ),
@@ -77,9 +77,9 @@ const AutoComplete = ({
               enterTo="opacity-100"
               afterLeave={() => setQuery('')}
             >
-              <Combobox.Options className="absolute z-10 w-full py-8 overflow-auto transition-opacity bg-white max-h-60 rounded-b-5 border-1 border-netural-dark border-t-netural">
+              <Combobox.Options className="absolute z-10 w-full py-2 overflow-auto transition-opacity bg-white max-h-60 rounded-b-5 border-1 border-netural-dark border-t-netural">
                 {filteredOptions.length === 0 && query !== '' ? (
-                  <Typography variant="body2" className="px-16">
+                  <Typography variant="body2" className="px-4">
                     Nothing found.
                   </Typography>
                 ) : (
@@ -88,7 +88,7 @@ const AutoComplete = ({
                       key={option.id}
                       className={({ active }) =>
                         classNames(
-                          'relative flex cursor-default select-none py-8 px-16 pr-4 hover:bg-neutral-100',
+                          'relative flex cursor-default select-none py-2 px-4 pr-4 hover:bg-neutral-100',
                           {
                             ['bg-netural']: active,
                           }
